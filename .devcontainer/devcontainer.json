@@ -1,0 +1,31 @@
+{
+    "name": "hyperloop-devcontainer",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "containerEnv": {
+        "GO111MODULE": "on",
+        "GOPROXY": "https://goproxy.cn"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/mpriscella/features/kind:1": {},
+        "ghcr.io/devcontainers/features/go:1": {}
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gnupg && curl -L https://packagecloud.io/fdio/2502/gpgkey | sudo apt-key add - && echo 'deb https://packagecloud.io/fdio/2502/ubuntu jammy main' | sudo tee /etc/apt/sources.list.d/99fdio.list && sudo apt update && sudo apt install -y vpp vpp-plugin-core vpp-dbg vpp-dev vpp-plugin-dpdk && sudo apt install -y tcpdump && sudo apt clean -y",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "redhat.vscode-yaml",
+                "ms-vscode.makefile-tools",
+                "zxh404.vscode-proto3",
+                "eamodio.gitlens",
+                "IBM.output-colorizer"
+            ],
+            "settings": {
+                "files.eol": "\n",
+                "go.useLanguageServer": true,
+                "go.lintTool": "golangci-lint"
+            }
+        }
+    }
+}
