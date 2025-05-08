@@ -4,7 +4,7 @@ include ./Makefile.Common
 gen-protobuf: install-protoc
 	$(PROTOC_BIN) --go_out=. --go_opt=paths=source_relative \
     	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
-    	./pkg/cni/v1alpha1/cni.proto
+    	./pkg/cni/api/v1alpha1/cni.proto
 
 .PHONY: gen-vppbinapi
 gen-vppbinapi: install-binapi-generator
