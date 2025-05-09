@@ -1,6 +1,7 @@
 {
     "name": "hyperloop-devcontainer",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "privileged": true,
     "containerEnv": {
         "GO111MODULE": "on",
         "GOPROXY": "https://goproxy.cn"
