@@ -1,4 +1,4 @@
-include ./Makefile.Common
+include ./Makefile.common.mk
 
 .PHONY: gen-protobuf
 gen-protobuf: install-protoc
