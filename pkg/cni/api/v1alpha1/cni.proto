@@ -36,7 +36,6 @@ message CmdArgs {
     string path = 5;
     string netns_override = 6;
     bytes stdin_data  = 7;
-
 }
 
 message CniRequest {
